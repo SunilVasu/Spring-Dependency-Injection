@@ -1,5 +1,7 @@
 package springframework.didemo.controllers;
 
+import org.springframework.stereotype.Controller;
+
 import springframework.didemo.services.GreetingService;
 
 /*
@@ -9,6 +11,7 @@ This is the most preferred way
 	2) By Setters - Area of much debate => SetterInjectedController.java
 	3) By Constructor - Most preferred => ConstructorInjectedController.java
 */
+@Controller
 public class ConstructorInjectedController {
 
 	private GreetingService greetingService;
@@ -17,7 +20,7 @@ public class ConstructorInjectedController {
 		this.greetingService = greetingService;
 	}
 	
-	String sayHello() {
+	public String sayHello() {
 		return greetingService.sayGreeting();
 	}
 }
