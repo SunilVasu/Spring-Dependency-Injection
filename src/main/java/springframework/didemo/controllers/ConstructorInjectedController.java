@@ -1,5 +1,6 @@
 package springframework.didemo.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
@@ -16,7 +17,7 @@ This is the most preferred way
 public class ConstructorInjectedController {
 
 	private GreetingService greetingService;
-	
+	@Autowired
 	public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
 		this.greetingService = greetingService;
 	}
